@@ -35,11 +35,10 @@ class BinaryTreeNode(object):
         # TODO: Check if left child has a value and if so calculate its height
         if self.left is not None:
             lh = self.left.height()
-        
+
         # TODO: Check if right child has a value and if so calculate its height
         if self.right is not None:
-            rh = self.right.height()            
-            
+            rh = self.right.height()
         # Return one more than the greater of the left height and right height
         return max(lh, rh) +1
 
@@ -107,7 +106,7 @@ class BinarySearchTree(object):
         # Find the parent node of where the given item should be inserted
         parent = self._find_parent_node_recursive(item, self.root)
         # TODO: Check if the given item should be inserted left of parent node
-        if parent == None: 
+        if parent == None:
             self.root.left = BinaryTreeNode(item)
         elif parent.data > item:
             # TODO: Create a new node and set the parent's left child
@@ -264,11 +263,11 @@ class BinarySearchTree(object):
         TODO: Memory usage: ??? Why and under what conditions?"""
         if not node:
             return ValueError("Traverse recursive failed node is none")
-        
+
         # TODO: Traverse left subtree, if it exists
         if node.left is not None:
             self._traverse_in_order_recursive(visit, node.left)
-        
+
         # TODO: Visit this node's data with given function
         visit(node.data)
 
@@ -314,7 +313,7 @@ class BinarySearchTree(object):
         TODO: Running time: ??? Why and under what conditions?
         TODO: Memory usage: ??? Why and under what conditions?"""
         # TODO: Traverse pre-order without using recursion (stretch challenge)
-        
+
 
     def items_post_order(self):
         """Return a post-order list of all items in this binary search tree."""
